@@ -13,17 +13,24 @@
 	<body>
 		<main class="main-content">
 			<div class="form-box">
-				<h3>Aca va el form</h3>
+				<form method="POST"> 
+					{% csrf_token %}
+					{{ form.as_p }}
+
+					<button>Guardar</button>
+				</form>
 			</div>
 			<div class="notes-box">
+				{% for note in notes %}
 				<section class="notes">
 					<div>
-						<h4>Titulo de la nota</h4>
+						<h4>{{note.title}}</h4>
 					</div>
 					<div>
-						<p>descripcion de la nota</p>
+						<p>{{note.description}}</p>
 					</div>
 				</section>
+				{% endfor %}
 			</div>
 
 		</main>
