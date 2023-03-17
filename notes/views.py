@@ -12,3 +12,6 @@ def index(request):
         Note.objects.create(title=request.POST['title'], description=request.POST['description'])
         return redirect("index")
 
+def delete_note(request, id):
+    Note.objects.get(id=id).delete()
+    return redirect("index")

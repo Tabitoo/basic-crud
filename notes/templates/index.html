@@ -1,7 +1,5 @@
 {% load static %}
 
-
-
 <html>
 
 	<head>
@@ -28,6 +26,9 @@
 					</div>
 					<div>
 						<p>{{note.description}}</p>
+					</div>
+					<div>
+						<a href="/delete/{{ note.id }}"><button>Borrar</button></a>
 					</div>
 				</section>
 				{% endfor %}
